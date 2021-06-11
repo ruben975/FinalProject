@@ -1,0 +1,24 @@
+<mat-card>
+    <mat-form-field>
+      <input matInput type="text" placeholder="Name" [(ngModel)]="order.name">
+    </mat-form-field>
+    <br />
+    <mat-form-field>
+      <mat-label>Car </mat-label>
+      <mat-select [(ngModel)]="order.carid">
+        <mat-option *ngFor="let car of cars" [value]="car.id">
+          {{car.type}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <br />
+    <mat-form-field>
+      <input matInput type="text" placeholder="Price" [(ngModel)]="order.price">
+    </mat-form-field>
+    <br />
+    <mat-form-field>
+      <input matInput type="text" placeholder="Address" [(ngModel)]="order.adress">
+    </mat-form-field>
+    <br />
+    <button class="btn btn-primary" (click)="saveOrder()">Save</button>
+</mat-card>
